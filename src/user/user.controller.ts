@@ -22,8 +22,8 @@ import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 @Controller('users')
 @ApiTags('Gerenciamento de Usuários')
-// @ApiBearerAuth()
-// @UseGuards(JwtAuthGuard)
+@ApiBearerAuth()
+@UseGuards(JwtAuthGuard)
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
@@ -70,7 +70,8 @@ export class UserController {
   @Get()
   @ApiOperation({
     summary: 'Lista todos os usuários',
-    description: 'Retorna uma lista com todos os usuários cadastrados no sistema',
+    description:
+      'Retorna uma lista com todos os usuários cadastrados no sistema',
   })
   @ApiResponse({
     status: 200,

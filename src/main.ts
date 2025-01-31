@@ -8,7 +8,8 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('API de Gerenciamento de Usuários')
-    .setDescription(`
+    .setDescription(
+      `
       API para gerenciamento de usuários com funcionalidades CRUD completas.
       
       ## Funcionalidades
@@ -19,7 +20,8 @@ async function bootstrap() {
       
       ## Autenticação
       A API utiliza autenticação JWT. É necessário incluir o token no header das requisições.
-    `)
+    `,
+    )
     .setVersion('1.0.0')
     .addBearerAuth()
     .build();
